@@ -955,7 +955,7 @@ public class SearchActivity extends Activity
                                       final int after) {
             //do nothing
         }
-
+                    
         @Override
         public boolean onEditorAction(final TextView v, final int actionId, final KeyEvent event) {
             final boolean actionConsumed;
@@ -965,6 +965,10 @@ public class SearchActivity extends Activity
 
             if (actionId == EditorInfo.IME_ACTION_GO || (enterPressed && !mAdapter.isEmpty())) {
                 launchActivity(mAdapter.getItem(0));
+                actionConsumed = true;
+            } else if {
+                // Show a toast message indicating that no app was found
+                Toast.makeText(getContext(), "No app found.", Toast.LENGTH_SHORT).show();
                 actionConsumed = true;
             } else {
                 actionConsumed = false;
